@@ -8,4 +8,8 @@ class Dealership
     @address = address
     @inventory = []
   end
+
+  def inventory_count
+    @inventory.count
+  end
 end
