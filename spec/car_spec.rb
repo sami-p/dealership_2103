@@ -2,46 +2,30 @@ require 'rspec'
 require './lib/car'
 
 RSpec.describe Car do
-  it 'exists' do
-    car = Car.new("Ford Mustang", 1500, 36)
+  describe '#initialize' do
+    it 'exists' do
+      car = Car.new("Ford Mustang", 1500, 36)
 
-    expect(car).to be_a(Car)
-  end
+      expect(car).to be_an_instance_of(Car)
+    end
 
-  it 'has a make' do
-    car = Car.new("Ford Mustang", 1500, 36)
+    it '#make_model' do
+      car = Car.new("Ford Mustang", 1500, 36)
 
-    expect(car.make).to eq("Ford")
-  end
+      expect(car.make).to eq("Ford")
+      expect(car.model).to eq("Mustang")
+    end
 
-  it 'has a model' do
-    car = Car.new("Ford Mustang", 1500, 36)
+    it '#monthly_payment' do
+      car = Car.new("Ford Mustang", 1500, 36)
 
-    expect(car.model).to eq("Mustang")
-  end
+      expect(car.monthly_payment).to eq(1500)
+    end
 
-  it 'has a monthly payment' do
-    car = Car.new("Ford Mustang", 1500, 36)
+    it '#loan_length' do
+      car = Car.new("Ford Mustang", 1500, 36)
 
-    expect(car.monthly_payment).to eq(1500)
-  end
-
-  it 'has a loan length' do
-    car = Car.new("Ford Mustang", 1500, 36)
-
-    expect(car.loan_length).to eq(36)
-  end
-
-  it 'has a total cost' do
-    car = Car.new("Ford Mustang", 1500, 36)
-
-    expect(car.total_cost).to eq(54000)
-  end
-
-  it 'is painted' do
-    car = Car.new("Ford Mustang", 1500, 36)
-    color = (:blue)
-
-    expect(car.paint!).to eq(:blue)
+      expect(car.loan_length).to eq(36)
+    end
   end
 end
