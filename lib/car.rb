@@ -1,9 +1,9 @@
 class Car
-  attr_reader :make,
-              :model,
-              :monthly_payment,
-              :loan_length,
-              :color
+  attr_accessor :make,
+                :model,
+                :monthly_payment,
+                :loan_length,
+                :color
 
   def initialize(make_model, monthly_payment, loan_length)
     @make_model = make_model

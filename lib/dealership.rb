@@ -23,4 +23,29 @@ class Dealership
     else true
     end
   end
+
+  def cars_by_make(make)
+    selected_inventory = []
+    @inventory.map do |car|
+      if car.make == make
+        selected_inventory << car
+      end
+    end
+    return selected_inventory
+  end
+
+  def total_value
+    value = 0
+    @inventory.each do |car|
+      value += car.total_cost
+    end
+    return value
+  end
+
+  def details
+    details = {
+                "address" => @address,
+                "total_value" => total_value
+              }
+  end
 end
