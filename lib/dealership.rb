@@ -48,4 +48,14 @@ class Dealership
                 "total_value" => total_value
               }
   end
+
+  def average_price_of_car
+    price = total_value / @inventory.length
+    average = price.to_s
+    average.reverse.scan(/\d{3}|.+/).join(",").reverse
+  end
+
+  def cars_sorted_by_price
+    @inventory.sort_by { |car| car.total_cost }
+  end
 end
